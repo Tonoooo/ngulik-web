@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js dasar</title>
+    <script src="javascriptnya.js"></script>
+</head>
+<body>
+    <h1>Ngulik ngulik aja nihh</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda nesciunt quo nemo enim magnam. Voluptatem dolore blanditiis quaerat! Dolorum eveniet sint consequuntur illo quaerat, quae laboriosam! Dignissimos qui quaerat voluptate!</p>
+
+    <textarea onkeyup="document.getElementById('jml-kata').innerText = this.value.length" cols="30" rows="10"></textarea>
+
+    <p>Jumlah karakter : <span id="jml-kata">0</span> karakter</p>
+
+    <hr>
+
+    <script>
+        document.write('<h1 style="color: red"> Halo nama saya '+nama+'</h1>');
+        document.write('<p>umur saya '+umur+'</p>');
+        document.write('<p>saya tinggal di '+alamat+'</p>');
+        let sekolah = 'SMKN 1 Cimahi';
+        document.write('<p>saya sekolah di '+sekolah+'</p>');
+
+        document.write('<br>');
+        // --- konfirm dialog
+        // let dil = confirm('Apakah anda ingin pindah halaman?');
+
+    </script>
+
+    <a href="https://cavary.biz.id" onclick="confirm('apakah anda yakin ingin pindah halaman? ')" style="background-color: darkgoldenrod; border: 1px solid lightcoral; border-radius: 5px; padding:1em; text-decoration: none; color: white; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; letter-spacing: 0.7px;" onmouseover="this.style.backgroundColor='yellow'; this.style.color='black';"  onmouseout="this.style.backgroundColor='darkgoldenrod'; this.style.color='white';">Tombol Pindah Halaman</a>
+
+    <hr style="margin: 50px 0;">
+
+    <p style="display: inline;">Apakah anda ingin menampilkan Nama anda? </p>
+    
+    <script>
+        function namanyaKakak() {
+            let namanya = prompt('Masukkan nama anda');
+            if (namanya) {
+                document.getElementById('namaKakak').innerHTML = namanya;
+            }
+
+        }
+        function ihAkuGakMau() {
+            document.getElementById('namaKakak').innerHTML = 'Yaudah kalau gak mau :(  aku juga gak mau';
+
+        }
+
+
+    </script>
+
+    <button onclick="namanyaKakak()" style="display: inline;">Mau yaa</button>
+    <button onclick="ihAkuGakMau()">Mboh ah</button>
+    <h1 id="namaKakak"></h1>
+
+    <br style="margin : 30px 0;">
+
+    
+
+</body>
+</html>
