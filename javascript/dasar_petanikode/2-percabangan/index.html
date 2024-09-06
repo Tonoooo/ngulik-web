@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percabangan JS | Ngulik Web</title>
+    <script src="app.js"></script>
+</head>
+<body>
+    
+    <h1 style="text-align: center;">Percabangan JS</h1>
+
+    <hr style="margin: 30ppx 0;">
+    <h2>- Percabangan oke lah</h2>
+    <script>
+        function percabanganBelanja() {
+            var totalBelanja = prompt("Total belanja?", 0);
+
+            if(totalBelanja > 100000){
+                alert("Selamat Anda dapat hadiah");
+            } else {
+                alert("belanjanya kurang banyak derr")
+            }
+
+            alert("Terima kasih sudah berbelanja di toko kami");
+        }
+        
+    </script>
+    <p style="display: inline;">Silahkan Masukkan Total belanja</p> 
+    <button onclick="percabanganBelanja()">Masukkin....</button>
+    
+    <h2>- percabangan oke juga</h2>
+    <script>
+        function ifNilai(){
+            var nilai = prompt("Inputkan nilai akhir:");
+            var grade = "";
+
+            if(nilai >= 90) grade = "A"
+            else if(nilai >= 80) grade = "B+"
+            else if(nilai >= 70) grade = "B"
+            else if(nilai >= 60) grade = "C+"
+            else if(nilai >= 50) grade = "C"
+            else if(nilai >= 40) grade = "D"
+            else if(nilai >= 30) grade = "E"
+            else grade = "F";
+
+            window.alert(`Grade anda: ${grade}`);
+
+            // Pada program di atas, kita tidak menggunakan kurung kurawal untuk membuat blok kode untuk if/else/if. karena hanya terdapat satu baris perintah saja. Yaitu: grade = ....
+        }
+    </script>
+    <button onclick="ifNilai()">cek nilainya kakak..</button>
+
+    <h2>- Switch case</h2>
+    <script>
+        function swit() {
+            var jawab = prompt("Kamu beruntung! Silakan pilih hadiahmu dengan memasukkan angka 1 sampai 5");
+            var hadiah = "";
+            switch(jawab){
+                case "1":
+                    hadiah = "Tisu";
+                    break;
+                case "2":
+                    hadiah = "1 Kotak Kopi";
+                    break;
+                case "3":
+                    hadiah = "Sticker";
+                    break;
+                case "4":
+                    hadiah = "Minyak Goreng";
+                    break;
+                case "5":
+                    hadiah = "Uang Rp 50.000";
+                    break;
+                default:
+                    alert("Opps! anda salah pilih");
+            }
+
+            if(hadiah === ""){
+                alert("Kamu gagal mendapat hadiah");
+            } else {
+                alert("Selamat kamu mendapatkan " + hadiah);
+            }
+        }
+    </script>
+    <button onclick="swit()">hadiah cuyy</button>
+
+    <h2>- Login cuy</h2>
+    <script>
+        function login() {
+            let username = prompt("Masukkan Username: ");
+            let password = prompt("Masukkan Password: ");
+
+            if (username == "admin" && password == "admin123") {
+                document.write("<h1> Selamat datang </h1>");
+            } else {
+                alert("Salah, coba lagi!");
+            }
+        }
+    </script>
+    <p>us = admin , ps = admin123</p>
+    <button onclick="login()">Login Cuy</button> 
+
+</body>
+</html>

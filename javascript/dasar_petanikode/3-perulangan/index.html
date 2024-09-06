@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perulangan JS | Ngulik Web</title>
+</head>
+<body>
+    <h1 style="text-align: center; margin: 10px;">LOOPING</h1>
+
+    <h2>Perulangan For</h2>
+    <script>
+        for (let i = 0; i < 10; i++) {
+            document.write("ini adalah perulangan for ke-" + i + "<br>");
+        }
+    </script>
+
+    <hr style="margin: 10px 0;">
+
+    <h2>Perulangan While</h2>
+    <script>
+        let i = 0;
+        while (i < 10) {
+            document.write("ini adalah perulangan while ke-" + i + "<br>");
+            i++;
+        }
+    </script>
+    <br>
+    <p style="display: inline;">mau liat confirm diulang? </p>
+    <script>
+        function confirmLoop() {
+            let ulang = confirm("mau ulang?");
+            let counter = 0;
+            while (ulang) {
+                counter++;
+                ulang = confirm("udah di ulang "+counter+" kali, mau ulang lagi gak?");
+            }
+        }
+    </script>
+    <button onclick="confirmLoop()">mau dong</button> 
+
+    <hr style="margin: 10px 0;">
+
+    <h2>Perulangan Do While</h2>
+    <script>
+        let d = 0;
+        do {
+            document.write("ini adalah perulangan do while ke-" + d + "<br>");
+            d++;
+        } while (i < 10);
+    </script>
+
+    <hr style="margin: 10px 0;">
+
+    <h2>Perulangan foreach</h2>
+    <script>
+        let kopi = ["abc", "kapal api", "luwak", "good day"];
+        for (i in kopi) {
+            document.write("kami menyediakan kopi " + kopi[i] + "<br>")
+        }
+    </script>
+
+    <p style="margin: 5px;">ini make method foreach</p>
+    <script>
+        kopi.forEach(function(item) {
+            document.write("ngopi ngopi " + item + "<br>")
+        })
+    </script>
+
+    <hr style="margin: 10px 0;">
+
+    <h2>repeat</h2>
+    <script>
+        document.write("Ulangi kalimat ini! ".repeat(100));
+    </script>
+
+    <hr style="margin: 10px 0;">
+
+    <h1 style="margin: 1em; text-align: center;">Bintang Segitiga Cuy</h1>
+
+    <script>
+        let jumlahBingtang = 7;
+        for (let x=1; x<=jumlahBingtang; x++){
+            document.write("*".repeat(x)+"<br>");
+        }
+
+        document.write("<br> <p>dibalik nih</p>");
+
+        for (let y=jumlahBingtang; y>=1; y--){
+            document.write("*".repeat(y)+"<br>");
+        }
+
+        jumlahBingtang = 7;
+
+        document.write("<br> <p>jam pasir nihh versi sendiri</p>");
+
+        for (let y=1; y<=jumlahBingtang; y++){
+            document.write("*".repeat(y)+"~".repeat((jumlahBingtang*2)-y*2)+"*".repeat(y)+"<br>");
+        }
+        for (let y=1; y<=jumlahBingtang; y++){
+            document.write("*".repeat(jumlahBingtang-y)+"~".repeat(y*2)+"*".repeat(jumlahBingtang-y)+"<br>");
+        }
+
+        document.write("<br> <p>jam pasir nihh bantuan ai</p>");
+
+        for (let y = 1; y < jumlahBingtang * 2; y++) {
+            let starCount = y <= jumlahBingtang ? y : jumlahBingtang * 2 - y;
+            let spaceCount = (jumlahBingtang * 2) - (starCount * 2) + 2;
+            document.write("*".repeat(starCount) + "~".repeat(spaceCount) + "*".repeat(starCount) + "<br>");
+        }
+
+    </script>
+
+</body>
+</html>
