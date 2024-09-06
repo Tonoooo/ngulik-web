@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array JS | Ngulik JS</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;"> ARRAY CUY</h1>
+
+    <script>
+        let punyaku = ["makan", 20, true, 1.2];
+
+        document.write("isi array = "+punyaku + "<br>");
+        document.write("indeks ke 2 = "+punyaku[2]);
+        // looping array
+        document.write("<h2>daftar produkku:</h2>");
+        document.write("<ol>");
+        for (let i = 0; i < punyaku.length; i++) {
+            document.write("<li>"+punyaku[i]+"</li>");
+        }
+        document.write("</ol>");
+
+        // foreach
+        document.write("<h2> foreach - Daftar apalah:</h2>");
+        document.write("<ol>");
+        punyaku.forEach((dataku) => {
+            document.write("<li>"+dataku+"</li>")
+        })
+        document.write("</ol>");
+
+        // splice
+        document.write("<h2>Slice - menghapus</h2>");
+        let bahasa = ["Javascript", "Kotlin", "Java", "PHP", "Python"];
+        document.write(bahasa + "<br>")
+        document.write(bahasa.splice(2,3) + "<br>");
+        document.write(bahasa + "<br>")
+
+        // 
+
+    </script>
+    
+</body>
+</html>

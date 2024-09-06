@@ -1,0 +1,74 @@
+/* body {
+
+} */
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+}
+
+.form{
+    flex: 50%;
+    text-align: center;
+    background-color: beige;
+}
+
+.form fieldset {
+    padding: 4em;
+    border-radius: 10px;
+    border: 5px solid #ccc;
+}
+
+.form input {
+    width: 100%;
+    padding: 1em;
+    margin: 1em 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.form button {
+    padding: 1em;
+    margin: 1em 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #3ec2ff;
+    color: black;
+}
+
+
+.daftar {
+    flex: 50%;
+    background-color: chartreuse;
+    padding: 4em;
+}
+
+.daftar ul {
+    font-size: 1.2em;
+}
+
+.daftar li {
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+
+
+.daftar a {
+    text-decoration: none;
+    color: black;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #3ec2ff;
+    color: black;
+}
+
+@media screen and (max-width: 668px) { 
+    .container{
+        flex-direction: column;
+        height: auto;
+        margin-top: 5em;
+    }
+}
