@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM API</title>
+</head>
+<body>
+    <h1 style="text-align: center; margin:20px 0">Aplikasi Ubah Warna pake DOM API</h1>
+
+    <label>Ubah Warna BG:</label>
+    <input type="color" name="bg-color" id="bg-color">
+    <br><br>
+    <label for="">Warna Text:</label>
+    <input type="color" name="text-color" id="text-color">
+
+    <script>
+        const bgColor = document.getElementById('bg-color');
+        const txtColor = document.getElementById('text-color');
+
+        bgColor.addEventListener("change", (event) => {
+            document.body.style.backgroundColor = bgColor.value;
+        });
+
+        txtColor.addEventListener("change", (event) => {
+            document.body.style.color = txtColor.value;
+        })
+    </script>
+
+</body>
+</html>

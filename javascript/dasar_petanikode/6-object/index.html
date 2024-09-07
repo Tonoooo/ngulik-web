@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object JS | Ngulik JS</title>
+</head>
+<body>
+    <h1 style="margin: 20px 0px;text-align: center;">Object JS</h1>
+
+    <script>
+        // memubuat object
+        const mobil = {
+            // property
+            merk: "BMW",
+            tahun: 2023,
+            warna: "Merah",
+            // method
+            maju: function(){
+                console.log("Mobil maju");
+            },
+            mundur: function(){
+                console.log("Mobil mundur");
+            }
+        };
+
+        // mengakses object
+        console.log(mobil.merk);
+        console.log(mobil.maju());
+
+        // membuat class
+        class motor {
+            constructor(merk,nama,tahun,tipe){
+                this.merk = merk;
+                this.nama = nama;
+                this.tahun = tahun;
+                this.tipe = tipe;
+            }
+
+            maju(){
+                console.log("Motor maju");
+            }
+
+            mundur(){
+                console.log("Motor mundur");
+            }
+
+            info(){
+                document.write(`
+                    Merk: ${this.merk}
+                    Nama: ${this.nama}
+                    Tahun: ${this.tahun}
+                    Tipe: ${this.tipe}
+                `);
+            }
+            
+            klakskon(){
+                console.log("biiibbb....");
+            }
+        }
+
+        // membuat object dari class
+        const motorX = new motor("Yamaha","Aerox",2023,"Sport");
+
+        document.write(motorX.merk);
+
+        motorX.info();
+
+
+
+
+
+    </script>
+</body>
+</html>

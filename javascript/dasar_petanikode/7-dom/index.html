@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM JS | Ngulik JS</title>
+</head>
+<body>
+    <h1 style="text-align: center; margin: 20px 0;">DOM JS</h1>
+
+    <div id="hai">hai</div>
+    <p id="halo">hola</p>
+
+    <p class="pag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, consectetur quaerat nulla est non officia beatae mollitia ab nihil magni quia repudiandae officiis provident molestiae quae dignissimos ratione necessitatibus quidem?</p>
+    <p class="pag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ratione assumenda enim obcaecati distinctio, veniam officiis, optio tenetur nisi dolores nemo a cupiditate ipsa sint perspiciatis sunt sapiente iure vel.</p>
+    <p class="pag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ratione assumenda enim obcaecati distinctio, veniam officiis, optio tenetur nisi dolores nemo a cupiditate ipsa sint perspiciatis sunt sapiente iure vel.</p>
+
+    <h4 id="apus-dong">Hapus mang..</h4>
+
+    <script>
+        document.write("Ini menggunakan DOM (Document Object Model)<br>");
+        document.write("Object ini (yang ini) disebut document dan menggunakan method write");
+
+        // mengakses object 
+        const siHai = document.getElementById('hai');
+        siHai.innerText = "hai cuy apa kabs";
+        siHai.style.backgroundColor = "green";
+        siHai.style.color = "red";
+        siHai.style.padding = "5px";
+        const siHalo = document.getElementById('halo');
+        siHalo.innerHTML = "ini halo juga";
+        siHalo.style.textAlign = "center";
+        // array element
+        const siPag = document.getElementsByClassName("pag");
+        siPag[0].style.color = "purple";
+            // membuat animasi pake dom. 
+        setInterval(function() {
+            siPag[1].style.paddingLeft = "100px";
+            siPag[2].style.color = "gray";
+
+            setTimeout(function() {
+                siPag[1].style.paddingLeft = "0";
+                siPag[2].style.color = "Yellow";
+            }, 500);
+        }, 1000);
+
+        // membuat elemen menggunakan dom
+        const subJudul = document.createElement('h2');
+        subJudul.textContent = "ini dibuat pake dom";
+        document.body.append(subJudul); // biar tampil
+        // menghapus elemen
+        const hps = document.getElementById('apus-dong');
+        hps.remove();
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
