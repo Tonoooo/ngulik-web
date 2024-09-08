@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX JS | Ngulik JS</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center; margin: 20px;">Ajax JS</h1>
+    <h2 style="color: blue;">AJAX adalah singkatan dari Asynchronous JavaScript And XML</h2>
+    
+    <h1>- XMLHttpRequest</h1>
+    <div id="hasil"></div>
+    <h3 style="display: inline;">Ini pake XMLHttpRequest</h3> <button id="btn-clear" onclick="clearResult()">clear</button>
+    <br><br>
+    <button id="button" onclick="loadContent()">Load Content</button>
+
+    <script>
+        function loadContent() {
+            const xhr = new XMLHttpRequest();
+            const url = 'https://api.github.com/users/tonoooo';
+            
+            xhr.onloadstart = function() {
+                document.getElementById('button').innerHTML = "Loading cuy";
+            }
+
+            xhr.onerror = function() {
+                alert("Gagal mengambil data");
+            }
+
+            xhr.onloadend = function() {
+                if (this.responseText !== "") {
+                    const data = JSON.parse(this.responseText);
+                    const img = document.createElement("img");
+                    img.src = data.avatar_url;
+                    const name = document.createElement('h3');
+                    name.innerHTML = data.login;
+
+                    document.getElementById('hasil').append(img, name);
+                    document.getElementById('button').innerHTML = "selesai";
+
+                    setTimeout(function() {
+                        document.getElementById("button").innerHTML = "Load lagi";
+                    }, 1000);
+
+                }
+            };
+
+            xhr.open("GET", url);
+            xhr.send();
+        }
+
+        function clearResult() {
+            document.getElementById('hasil').innerHTML = "";
+        }
+    </script>
+
+    <hr style="margin: 40px 0">
+
+    <h1>- JQuery</h1>
+    <button id="loadButton">Mau liat datanya gak?</button>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#loadButton').click(function() {
+                $.getJSON('https://api.github.com/users/tonoooo', function(data) {
+                    $('#result').html(`
+                        <h2>${data.login}</h2>
+                        <img src="${data.avatar_url}" alt="Avatar" width="100">
+                        <p>Username: ${data.login}</p>
+                        <p>Bio: ${data.bio || 'Tidak ada bio'}</p>
+                    `);
+                }).fail(function() {
+                    $('#result').html('Gagal mengambil data.');
+                });
+            });
+        });
+    </script>
+
+    <hr style="margin: 40px 0">
+
+    <h1>- Fetch</h1>
+
+    <h3>Data Pengguna GitHub</h3>
+    <button id="buttonFetch">Ambil Data</button>
+    <div id="resultFetch"></div>
+
+    <script>
+        document.getElementById('buttonFetch').addEventListener('click', function() {
+            fetch('https://api.github.com/users/tonoooo')
+                .then(response => {
+                    if (!response.ok){
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(dataFetch => {
+                    document.getElementById('resultFetch').innerHTML = `
+                        <h2>${dataFetch.name}</h2>
+                        <img src="${dataFetch.avatar_url}" alt="Avatar" width="100">
+                        <p>Username: ${dataFetch.login}</p>
+                        <p>Bio: ${dataFetch.bio || 'Tidak ada bio'}</p>
+                    `;
+                })
+                .catch(error => {
+                    document.getElementById('resultFetch').innerHTML = 'Gagal mengambil data.';
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        });
+    </script>
+
+</body>
+</html>
