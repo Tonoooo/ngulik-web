@@ -1,0 +1,157 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #F1F3C2;
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #E8B86D;
+    color: #ffffff;
+    height: 80%;
+}
+
+li {
+    float: left;
+    
+}
+
+li button{
+    float: right;
+    padding: 0px;
+    background: transparent;
+    margin-top: 50%;
+    margin-right: 10px;
+    border: none;
+    font-size: 15px;
+}
+
+.judul {
+    text-align: center;
+    justify-content: center;
+    font-size: 12px;
+    font-family: 'calibri, sans-serif';
+    padding-left: 10px;
+}
+
+table { 
+    display: block;
+    margin: 20px auto;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-collapse: collapse;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 5px;
+} 
+
+input[type="text"]{
+    padding: 20px 40px;
+    background-color: #CEDF9F;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus{
+    outline: #A1D6B2;
+}
+
+input[type="button"]{
+    width: 100%;
+    padding: 20px 40px;
+    background-color: #A1D6B2; 
+    color: white; 
+    font-size: 24px; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 19px 40px;
+    background-color: #A1D6B2; 
+    color: white; 
+    font-size: 20px; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 5px; 
+}
+
+body.dark-mode {
+    background-color: #121212; /* Warna latar belakang gelap */
+    color: white; /* Warna teks putih */
+}
+
+table.dark-mode {
+    background-color: #1e1e1e; /* Warna latar belakang tabel gelap */
+    border: 3px solid #444; /* Warna border tabel */
+}
+
+input[type="text"].dark-mode {
+    background-color: #3C3D37; /* Warna latar belakang input */
+    color: white; /* Warna teks input */
+    border: 2px solid #444; /* Warna border input */
+}
+
+input[type="button"].dark-mode {
+    background-color: #333; /* Warna latar belakang input */
+    color: white; /* Warna teks input */
+    border: 1px solid #444; /* Warna border input */
+}
+
+button.dark-mode {
+    background-color: transparent; /* Latar belakang transparan untuk tombol */
+    color: white; /* Warna teks tombol */
+}
+
+ul.dark-mode {
+    background-color: #1e1e1e; /* Warna latar belakang header gelap */
+    color: white; /* Warna teks header */
+}
+
+td.dark-mode {
+    background-color: #333; /* Warna latar belakang gelap untuk sel */
+    color: white; /* Warna teks putih untuk sel */
+}
+
+td.dark-mode button {
+    background-color: #444444; /* Warna latar belakang input */
+    color: white; /* Warna teks input */
+    border: 1px solid #666; /* Warna border input */
+}
+
+td.dark-mode input[type="button"] {
+    background-color: #444; /* Warna latar belakang tombol dalam mode gelap */
+    color: white; /* Warna teks tombol dalam mode gelap */
+    border: 1px solid #666; /* Warna border tombol dalam mode gelap */
+}
+
+
+@media screen and (max-width: 600px) {
+    table { 
+        width: 95%; /* Mengatur lebar tabel menjadi 95% */
+    } 
+
+    input[type="text"] {
+        width: 100%; /* Mengatur lebar input menjadi 100% dari sel */
+        padding: 20px; /* Padding dalam input */
+        box-sizing: border-box;
+    }
+
+    input[type="button"] {
+        padding: 20px; /* Padding dalam tombol */
+    }
+
+    button {
+        padding: 19px; /* Padding dalam tombol */
+    }
+}
