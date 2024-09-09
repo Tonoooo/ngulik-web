@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event JS | Ngulik JS</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: rgb(32, 115, 187);">Event JS</h1>
+    <p>ada dua cara event: 1. di atribut html & 2. pake addEventListener</p>
+
+    <button onclick="hai()">Hello donk - atr</button>
+    <button id="hai-evlis">hai hai hai - evl</button>
+
+    <script>
+        function hai() {
+            alert("hai donk");
+        }
+
+        document.getElementById("hai-evlis").addEventListener("click",function() {
+            alert("hai hai hai - evlis");
+        })
+
+    </script>
+
+    <hr style="margin: 40px 0px;">
+
+    <button id="btn-double">klik dua kali donk</button>
+
+    <script>
+        const btn2 = document.getElementById("btn-double");
+        btn2.addEventListener("dblclick", function() {
+            alert("klik dua kali udah :)");
+        })
+    </script>
+
+    <hr style="margin: 40px 0px;">
+    <h2>- Mouse event</h2>
+    <button id="btn-enter">Mouse Enter</button>
+    <button id="btn-hover">Mouse hover</button>
+    <button id="btnout">Mouse Out</button>
+
+    <script>
+        const btnEnter = document.getElementById("btn-enter");
+        const btnHover = document.getElementById("btn-hover");
+        const btnOut = document.getElementById("btnout");
+
+        btnEnter.addEventListener("mouseenter", function(event) {
+            event.target.innerText = "Mouse sudah masuk";
+        });
+
+        btnHover.addEventListener("mouseover", function(event) {
+            event.target.innerText = "Mouse sudah diatas elemen";
+        });
+
+        btnOut.addEventListener("mouseout", function(event) {
+            event.target.innerText = "Mouse sudah keluar";
+        });
+    </script>
+
+    <hr style="margin: 40px 0px;">
+    <h2>- event keyboard</h2>
+    <p id="keydown"></p>
+    <p id="pressed"></p>
+    <p id="keyup"></p>
+
+    <script>
+        const keydown = document.getElementById("keydown");
+        const pressed = document.getElementById("pressed");
+        const keyup = document.getElementById("keyup");
+
+        document.addEventListener("keydown", function(event) {
+            keydown.innerText = `anda menekan ${event.key}`;
+        });
+
+        document.addEventListener("keypress", function(event) {
+            pressed.innerText = `anda menahan ${event.key}`;
+        });
+
+        document.addEventListener("keyup", function(event) {
+            keyup.innerText = `anda melepas ${event.key}`;
+
+        });
+    </script>
+
+    <hr style="margin: 40px 0px;">
+    <h2>- event change</h2>
+    <div id="info"></div>
+    <label for="">Pilih Mobil : </label>
+    <select name="" id="mobil">
+        <option value="">--pilih--</option>
+        <option value="BMW">BMW</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Honda">Honda</option>
+    </select>
+
+    <script>
+        const info = document.getElementById("info");
+        const mobil = document.getElementById("mobil");
+
+        mobil.addEventListener("change", function() {
+            info.innerText = `Anda memilih ${mobil.value}`;
+        });
+    </script>
+
+    <hr style="margin: 40px 0px;">
+    <h2 style="text-align: center;">-- event form --</h2>
+    <form action="" method="post" id="form-login">
+        <fieldset>
+            <legend>loginnya kakak..</legend>
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="username...">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="password...">
+            </div>
+            <div>
+                <p id="feedback"></p>
+                <button type="submit">Login</button>
+                <button type="reset">Clear</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        const formLogin = document.getElementById("form-login");
+        const feedback = document.getElementById("feedback");
+
+        formLogin.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            feedback.innerHTML = `Login dengan username ${data.get('username')} dan password ${data.get('password')}`;
+        });
+        formLogin.addEventListener("reset", function() {
+            feedback.innerHTML = "Form dibersihkan";
+        });
+
+
+
+    </script>
+
+</body>
+</html>
