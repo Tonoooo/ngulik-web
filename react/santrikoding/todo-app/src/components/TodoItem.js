@@ -25,10 +25,14 @@ const TodoItem = ({ todo, setRefresh }) => {
 
 
     return (
-        <li className={`${todo.done ? "checked" : ""}`}>
-            <div onClick={updateTodo}>{todo.title} </div>
-            <span className="close" onClick={deleteTodo}>x</span>
-        </li>
+        <div className="flex justify-between  items-center p-2 bg-purple-300 m-1 rounded-xl ">
+            <li className={ "flex items-center"}>
+                <i class={`${todo.done ? "material-icons text-sm pr-3" : "invisible material-icons text-sm pr-3"}`}>check_circle</i>
+                <div onClick={updateTodo} className={`${todo.done ? "line-through" : ""}`}>{todo.title} </div>
+                <i class="material-icons absolute right-5 text-white" onClick={deleteTodo}>delete_forever</i>
+            </li>
+        </div>
+        
     )
 }
 

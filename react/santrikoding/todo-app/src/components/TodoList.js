@@ -25,12 +25,13 @@ const TodoList = ({isRefresh, setRefresh}) => {
   }, [isRefresh, setRefresh]);  
 
   return (
-    <ul id="todo-list">
-      {todos.map((todo) => (
-        <TodoItem todo={todo} key={todo.id} setRefresh={setRefresh}/>
-      ))}
-
-    </ul>
+    <div className="p-4 bg-white mx-4 mt-8 rounded-xl shadow-xl"> {/* Container untuk ul */}
+      <ul id="todo-list" className="relative m-0 p-0 cursor-pointer [&>*:nth-child(odd)]:bg-purple-200 [&>*:nth-child(even)]:bg-purple-300">
+        {todos.map((todo) => (
+          <TodoItem todo={todo} key={todo.id} setRefresh={setRefresh}/>
+        ))}
+      </ul>
+    </div>
   );
 };
 
