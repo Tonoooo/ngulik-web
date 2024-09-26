@@ -31,6 +31,18 @@ export default function PostIndex() {
 
     }, []);
 
+    // method deletepost
+    const deletePost = async (id) => {
+        // delete with api
+        await api.delete(`/api/posts/${id}`)
+            .then(response => {
+
+                // call method "fetchDataPosts"
+                fetchDataPosts();
+            })
+
+    }
+
 
     return (
         <div className="container mt-5 mb-5">
@@ -59,8 +71,8 @@ export default function PostIndex() {
                                                     <td>{ post.title} </td>
                                                     <td>{ post.content }</td>
                                                     <td className="text-center">
-                                                        <Link to={'/posts/edit/${post.id}'} className="btn btn-sm btn-primary rounded-sm shadow border-0 me-2">EDIT</Link>
-                                                        <button className="btn btn-sm btn-danger rounded-sm shadow border-0">DELETE</button>
+                                                        <Link to={`/posts/edit/${post.id}`} className="btn btn-sm btn-primary rounded-sm shadow border-0 me-2">EDIT</Link>
+                                                        <button onClick={() => deletePost(post.id)} className="btn btn-sm btn-danger rounded-sm shadow border-0" >DELETE</button>
                                                     </td>
                                                 </tr>
                                                 )) 
