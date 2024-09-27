@@ -9,34 +9,17 @@ export default function App() {
   return (
     <>
       <div>
-        <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-          <div className="container">
-            <Link to="/" className="navbar-brand">HOME</Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <Link to="/posts" className="nav-link active" aria-current="page">POSTS</Link>
-                </li>
-              </ul>
-              <ul className="navbar-nav ms-auto mb-2 mb-lg-0" role="search">
-                <a
-                  href="https://santrikoding.com/tutorial-react-dan-laravel-10-2-install-dan-konfigurasi-react-router-dom"
-                  target="_blank"
-                  className="btn btn-success"
-                  >SANTRIKODING.COM</a
-                >
-              </ul>
+        <nav className="bg-green-400 w-full top-0 start-0 border-b py-1">
+          
+          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <div>
+              <Link to="/" className="font-sans font-extrabold text-xl text-white">ArikelHuy</Link>
+            </div>
+            <div className="flex flex-wrap space-x-3">
+              <Link to="/posts" className="bg-orange-400 py-1 px-2 rounded-md m-0 flex items-center" aria-current="page">
+                <i className="material-icons mr-1">article</i>
+                POSTS
+              </Link>
             </div>
           </div>
         </nav>
