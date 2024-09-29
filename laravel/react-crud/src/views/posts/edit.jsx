@@ -75,56 +75,53 @@ export default function PostEdit() {
 
 
     return (
-        <div className="container mt-5 mb-5">
-            <div className="row">
-                <div className="col-md-12">
-                    <div className="card border-0 rounded shadow">
-                        <div className="card-body">
-                            <form onSubmit={updatePost}>
+        <div className="my-10 mx-5 py-8 bg-white p-5">
+            <form onSubmit={updatePost}>
 
-                                <div className='mb-3'>
-                                    <label className='form-label fw-bold'>Image</label>
-                                    <input type="file" onChange={handleFileChange} className='form-control' />
-                                    {
-                                        errors.image && (
-                                            <div className='alert alert-danger mt-2'>
-                                                {errors.image[0]}
-                                            </div>
-                                        )
-                                    }
+                <div className='mb-3 flex items-center'>
+                    <label className='w-1/4 px-2'>Image</label>
+                    <div className='w-3/4'>
+                        <input type="file" onChange={handleFileChange} className='block w-full text-xs text-gray-900 border border-gray-300 p-1 rounded-md cursor-pointer bg-gray-50 focus:outline-none' />
+                        {
+                            errors.image && (
+                                <div className='bg-red-300 p-2 rounded-md text-red-800'>
+                                    {errors.image[0]}
                                 </div>
+                            )
+                        }
+                    </div>
+                    
+                </div>
 
-                                <div className='mb-3'>
-                                    <label className='form-label fw-bold'>Title</label>
-                                    <input type="text" className='form-control' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Title Post' />
-                                    {
-                                        errors.title && (
-                                            <div className="alert alert-danger mt-2">
-                                                {errors.title[0]}
-                                            </div>
-                                        )
-                                    }
+                <div className='mb-3 flex items-center'>
+                    <label className='w-1/4 px-2'>Title</label>
+                    <div className='w-3/4'>
+                        <input type="text" className='block w-full px-2 text-sm py-1 text-gray-900 border border-gray-300 rounded-md cursor-pointer p-1 bg-gray-50 focus:outline-none' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Title Post' />
+                        {
+                            errors.title && (
+                                <div className="bg-red-300 p-2 rounded-md text-red-800">
+                                    {errors.title[0]}
                                 </div>
-
-                                <div className="mb-3">
-                                    <label className="form-label fw-bold">Content</label>
-                                    <textarea className="form-control" value={content} onChange={(e) => setContent(e.target.value)} rows="5" placeholder="Content Post"></textarea>
-                                    {
-                                        errors.content && (
-                                            <div className="alert alert-danger mt-2">
-                                                {errors.content[0]}
-                                            </div>
-                                        )
-                                    }
-                                </div>
-
-                                <button type='submit' className='btn btn-md btn-primary rounded-sm shadow border-0'>Update</button>
-
-                            </form>
-                        </div>
+                            )
+                        }
                     </div>
                 </div>
-            </div>
+
+                <div className="mb-3">
+                    <label className="w-1/4 px-2">Content</label>
+                    <textarea className="block p-2 m-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none" value={content} onChange={(e) => setContent(e.target.value)} rows="5" placeholder="Content Post"></textarea>
+                    {
+                        errors.content && (
+                            <div className="bg-red-300 p-2 rounded-md text-red-800">
+                                {errors.content[0]}
+                            </div>
+                        )
+                    }
+                </div>
+
+                <button type='submit' className='w-full m-2 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-400'>Update</button>
+
+            </form>
         </div>
     )
 }

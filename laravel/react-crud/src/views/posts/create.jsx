@@ -54,37 +54,41 @@ export default function PostCreate() {
     }
 
     return (
-         <div className="mt-5 bg-white p-5">
+         <div className="my-10 mx-5 py-8 bg-white p-5">
             <div className="">
                 <form onSubmit={storePost}>
-                
+                    
                     <div className="mb-3 flex items-center">
-                        <label className="px-2 mx-2">Image</label>
-                        <input type="file" onChange={handleFileChange} className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none"/>
-                        {
-                            errors.image && (
-                                <div className="alert alert-danger mt-2">
-                                    {errors.image[0]}
-                                </div>
-                            )
-                        }
+                        <label className="w-1/4 px-2">Image</label>
+                        <div className="w-3/4">
+                            <input type="file" onChange={handleFileChange} className="block w-full text-xs text-gray-900 border border-gray-300 p-1 rounded-md cursor-pointer bg-gray-50 focus:outline-none"/>
+                            {
+                                errors.image && (
+                                    <div className="bg-red-300 p-2 rounded-md text-red-800">
+                                        {errors.image[0]}
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
+
+                    <div className="mb-3 flex items-center">
+                        <label className="w-1/4 px-2">Title</label>
+                        <div className="w-3/4">
+                            <input type="text" className="block w-full px-2 text-sm py-1 text-gray-900 border border-gray-300 rounded-md cursor-pointer p-1 bg-gray-50 focus:outline-none" onChange={(e) => setTitle(e.target.value)} placeholder="Title Post"/>
+                            {
+                                errors.title && (
+                                    <div className="bg-red-300 p-2 rounded-md text-red-800">
+                                        {errors.title[0]}
+                                    </div>
+                                )
+                            }
+                        </div>
                     </div>
 
                     <div className="mb-3">
-                        <label className="">Title</label>
-                        <input type="text" className="" onChange={(e) => setTitle(e.target.value)} placeholder="Title Post"/>
-                        {
-                            errors.title && (
-                                <div className="alert alert-danger mt-2">
-                                    {errors.title[0]}
-                                </div>
-                            )
-                        }
-                    </div>
-
-                    <div className="mb-3">
-                        <label className="">Content</label>
-                        <textarea className="" onChange={(e) => setContent(e.target.value)} rows="5" placeholder="Content Post"></textarea>
+                        <label className="p-2 mb-2">Content</label>
+                        <textarea className="block p-2 m-2 w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none" onChange={(e) => setContent(e.target.value)} rows="5" placeholder="Content Post"></textarea>
                         {
                             errors.content && (
                                 <div className="bg-red-300 p-2 rounded-md text-red-800">
@@ -94,7 +98,7 @@ export default function PostCreate() {
                         }
                     </div>
 
-                    <button type="submit" className="">Save</button>
+                    <button type="submit" className="w-full m-2 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-400">Save</button>
                 </form>
             </div>
         </div>
